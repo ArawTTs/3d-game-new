@@ -98,6 +98,9 @@ namespace StarterAssets
         private int _animIDFreeFall;
         private int _animIDMotionSpeed;
 
+        //particle System
+        ParticleSystem particle;
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
 #endif
@@ -150,6 +153,9 @@ namespace StarterAssets
             // reset our timeouts on start
             _jumpTimeoutDelta = JumpTimeout;
             _fallTimeoutDelta = FallTimeout;
+
+            //particle System
+            particle = GetComponent<ParticleSystem>();
         }
 
         private void Update()
@@ -162,17 +168,21 @@ namespace StarterAssets
             aimarrow();
         }
 
+        //heal spell
         private void aimarrow()
         { 
             if(Input.GetMouseButtonDown(1))
             {
                 _animator.SetBool("aim", true);
+                particle.Play();
             }
             else if (Input.GetMouseButtonUp(1)) 
             {
                 _animator.SetBool("aim", false);
             }
         }
+
+        
 
         private void LateUpdate()
         {

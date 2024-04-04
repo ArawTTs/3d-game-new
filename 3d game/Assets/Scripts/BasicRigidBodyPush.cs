@@ -38,6 +38,7 @@ public class BasicRigidBodyPush : MonoBehaviour
 		body.AddForce(pushDir * strength, ForceMode.Impulse);
 	}
 
+    //camera enable/disable
     private void OnEnable()
     {
         CameraSwitcher.Register(overworldCam);
