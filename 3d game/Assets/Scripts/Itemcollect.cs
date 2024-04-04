@@ -8,7 +8,7 @@ public class Itemcollect : MonoBehaviour
 {
     pickup spider;
     public UnityEvent Event;
-
+    public Animator animator;
 
     private void Start()
     {
@@ -17,8 +17,9 @@ public class Itemcollect : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.E))
+        if (other.tag == "Player" && Input.GetKeyDown(KeyCode.G))
         {
+            animator.Play("pickup");
             Destroy(gameObject);
             Event.Invoke();
             

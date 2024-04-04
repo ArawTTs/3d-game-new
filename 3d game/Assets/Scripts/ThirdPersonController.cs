@@ -101,6 +101,11 @@ namespace StarterAssets
         //particle System
         ParticleSystem particle;
 
+        //torch
+        public GameObject torch;
+        bool equiptorch = false;
+
+
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
         private PlayerInput _playerInput;
 #endif
@@ -144,6 +149,7 @@ namespace StarterAssets
             _input = GetComponent<StarterAssetsInputs>();
 #if ENABLE_INPUT_SYSTEM && STARTER_ASSETS_PACKAGES_CHECKED
             _playerInput = GetComponent<PlayerInput>();
+
 #else
 			Debug.LogError( "Starter Assets package is missing dependencies. Please use Tools/Starter Assets/Reinstall Dependencies to fix it");
 #endif
@@ -166,6 +172,8 @@ namespace StarterAssets
             GroundedCheck();
             Move();
             aimarrow();
+            settorch();
+            sneak();
         }
 
         //heal spell
@@ -179,6 +187,30 @@ namespace StarterAssets
             else if (Input.GetMouseButtonUp(1)) 
             {
                 _animator.SetBool("aim", false);
+            }
+        }
+
+        private void settorch()
+        {
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                equiptorch = !equiptorch;
+                _animator.SetTrigger("equip"/*, equiptorch*/);
+                torch.SetActive(equiptorch);
+                Debug.Log("work");
+
+            }
+        }
+
+        private void sneak()
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                _animator.SetBool("sneek", true);
+            }
+            else if(Input.GetKeyUp(KeyCode.C))
+            {
+                _animator.SetBool("sneek", false);
             }
         }
 

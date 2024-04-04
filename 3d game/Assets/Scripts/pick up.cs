@@ -9,7 +9,6 @@ public class pickup : MonoBehaviour
 {
     public TextMeshProUGUI point;
     
-    
     int Pickup;
 
     void Update()

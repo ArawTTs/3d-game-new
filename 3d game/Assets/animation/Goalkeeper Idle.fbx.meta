@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 0f12abc664857ea49ae0356fb58c799a
+guid: 400a7c83ddd7c8244b7ee8ad8bf51615
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,9 +16,7 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: "Copied Avatar Rig Configuration mis-match. Transform hierarchy
-      does not match:\n\tTransform 'mixamorig:LeftEye' for human bone 'LeftEye' not
-      found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
