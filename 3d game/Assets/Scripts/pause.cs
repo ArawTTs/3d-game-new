@@ -8,12 +8,17 @@ public class pause : MonoBehaviour
 {
     public static bool GameIsPaused = false;
     public GameObject PauseMenuUI;
-    public CinemachineVirtualCamera camera;
+    public CinemachineVirtualCamera Camera;
 
+
+    private void Start()
+    {
+        Resume();
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (GameIsPaused)
             {
@@ -30,16 +35,18 @@ public class pause : MonoBehaviour
     void Resume()
     { 
         PauseMenuUI.SetActive(false);
-        camera.enabled = true;
+        Camera.enabled = true;
         Time.timeScale = 1f;
         GameIsPaused = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void Pause()
     {
         PauseMenuUI.SetActive(true);
-        camera.enabled = false;
+        Camera.enabled = false;
         Time.timeScale = 0f;
         GameIsPaused = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }

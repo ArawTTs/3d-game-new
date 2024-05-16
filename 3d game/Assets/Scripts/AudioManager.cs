@@ -53,4 +53,10 @@ public class AudioManager : MonoBehaviour
         audioMixer.SetFloat("BG", Mathf.Lerp(-80f, 0f, PlayerPrefs.GetFloat("bgVolume", 1f)));
         audioMixer.SetFloat("SFX", Mathf.Lerp(-80f, 0f, PlayerPrefs.GetFloat("sfxVolume", 1f)));
     }
+
+    public void SaveVolume(float volume)
+    {
+        audioMixer.SetFloat("Master", volume);
+        PlayerPrefs.SetFloat("Master", volume);
+    }
 }

@@ -8,8 +8,8 @@ public class BasicRigidBodyPush : MonoBehaviour
 	[Range(0.5f, 5f)] public float strength = 1.1f;
 
     //camera
-    [SerializeField] CinemachineVirtualCamera overworldCam;
-    [SerializeField] CinemachineVirtualCamera closeCam;
+    /*[SerializeField] CinemachineVirtualCamera overworldCam;
+    [SerializeField] CinemachineVirtualCamera closeCam;*/
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
 	{
@@ -39,7 +39,7 @@ public class BasicRigidBodyPush : MonoBehaviour
 	}
 
     //camera enable/disable
-    private void OnEnable()
+   /* private void OnEnable()
     {
         CameraSwitcher.Register(overworldCam);
         CameraSwitcher.Register(closeCam);
@@ -64,5 +64,5 @@ public class BasicRigidBodyPush : MonoBehaviour
                 CameraSwitcher.SwitchCamera(overworldCam);
             }
         }
-    }
+    }*/
 }
