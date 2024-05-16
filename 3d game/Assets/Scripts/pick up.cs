@@ -35,6 +35,9 @@ public class pickup : MonoBehaviour
 
         if (Pickup == 5)
             scene.SetActive(true);
+
+        if (Pickup == 10)
+        scene.SetActive(true);
     }
 
     private void OnDisable()

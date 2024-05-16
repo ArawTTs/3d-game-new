@@ -5,13 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class portal : MonoBehaviour
 {
+    public int number;
 
     // Update is called once per frame
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("stage 2");
+            SceneManager.LoadScene(number);
         }
     }
 }
